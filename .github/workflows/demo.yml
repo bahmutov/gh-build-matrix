@@ -22,7 +22,7 @@ jobs:
         run: echo '${{ steps.prepare.outputs.matrix }}'
 
   print:
-    needs: [prep]
+    needs: [prepare]
     runs-on: ubuntu-20.04
     steps:
       - name: Print result 🖨
