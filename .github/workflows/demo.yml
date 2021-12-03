@@ -6,8 +6,8 @@ on: [push]
 jobs:
   prepare:
     runs-on: ubuntu-20.04
-    outputs:
-      matrix: ${{ steps.prepare.outputs.matrix }}
+    # outputs:
+    #   matrix: ${{ steps.prepare.outputs.matrix }}
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
