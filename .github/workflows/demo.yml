@@ -13,3 +13,6 @@ jobs:
         uses: ./
         with:
           n: 5
+
+      - name: Print result 🖨
+        run: echo '${{ steps.prepare.outputs.matrix }}'
