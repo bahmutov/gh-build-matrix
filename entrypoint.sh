@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 N=$1
 # by default N is 1
