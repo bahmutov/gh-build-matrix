@@ -1,9 +1,13 @@
+# workflow reference
+# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
 name: demo
 on: [push]
 
 jobs:
   prep:
     runs-on: ubuntu-20.04
+    outputs:
+      matrix: ${{ steps.prepare.outputs.matrix }}
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
