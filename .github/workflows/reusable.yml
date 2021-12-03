@@ -1,0 +1,35 @@
+# reusable workflow to generate the number of containers
+# https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
+name: reusable
+on:
+  workflow_call:
+    inputs:
+      n:
+        description: 'Number of parallel containers'
+        required: true
+        default: 1
+    outputs:
+      matrix:
+        description: 'Generated container string'
+        value: ${{ jobs.prepare.outputs.matrix }}
+
+jobs:
+  prepare:
+    runs-on: ubuntu-20.04
+    # explicitly set the output of this job
+    # so that other jobs can use it
+    outputs:
+      matrix: ${{ steps.prepare.outputs.matrix }}
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      # generate the list using a bash script
+      - name: Create matrix ⊹
+        id: prepare
+        uses: ./
+        with:
+          n: ${{ inputs.n }} # number of containers to output
+
+      - name: Print result 🖨
+        run: echo '${{ steps.prepare.outputs.matrix }}'
