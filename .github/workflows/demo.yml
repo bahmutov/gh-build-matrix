@@ -16,3 +16,10 @@ jobs:
 
       - name: Print result 🖨
         run: echo '${{ steps.prepare.outputs.matrix }}'
+
+  print:
+    needs: [prep]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Print result 🖨
+        run: echo '${{ steps.prepare.outputs.matrix }}'
