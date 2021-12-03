@@ -6,6 +6,7 @@ on:
     inputs:
       n:
         description: 'Number of parallel containers'
+        type: number
         required: true
         default: 1
     outputs:
