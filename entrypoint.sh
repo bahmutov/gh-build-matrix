@@ -23,4 +23,7 @@ done
 # close the list
 OUTPUT+="]}"
 
+# set the job's output
+echo "::set-output name=matrix::$OUTPUT"
+# and print the list so that everyone can see it
 echo ${OUTPUT}
