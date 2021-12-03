@@ -5,7 +5,11 @@ jobs:
   prep:
     runs-on: ubuntu-20.04
     steps:
-      - id: prepare
+      - name: Checkout 🛎
+        uses: actions/checkout@v2
+
+      - name: Create matrix ⊹
+        id: prepare
         uses: ./
         with:
           n: 5
