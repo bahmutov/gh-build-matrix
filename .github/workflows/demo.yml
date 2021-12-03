@@ -4,23 +4,28 @@ name: demo
 on: [push]
 
 jobs:
+  # generate a string with containers from 1 to N
   prepare:
     runs-on: ubuntu-20.04
-    # outputs:
-    #   matrix: ${{ steps.prepare.outputs.matrix }}
+    # explicitly set the output of this job
+    # so that other jobs can use it
+    outputs:
+      matrix: ${{ steps.prepare.outputs.matrix }}
     steps:
       - name: Checkout 🛎
         uses: actions/checkout@v2
 
+      # generate the list using a bash script
       - name: Create matrix ⊹
         id: prepare
         uses: ./
         with:
-          n: 5
+          n: 5 # number of containers to output
 
       - name: Print result 🖨
         run: echo '${{ steps.prepare.outputs.matrix }}'
 
+  # demo job that prints the generated string
   print:
     needs: [prepare]
     runs-on: ubuntu-20.04
