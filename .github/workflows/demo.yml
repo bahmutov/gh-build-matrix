@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - id: prepare
-        uses: .
+        uses: ./
         with:
           n: 5
