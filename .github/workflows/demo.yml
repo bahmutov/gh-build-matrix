@@ -4,7 +4,7 @@ name: demo
 on: [push]
 
 jobs:
-  prep:
+  prepare:
     runs-on: ubuntu-20.04
     outputs:
       matrix: ${{ steps.prepare.outputs.matrix }}
@@ -26,4 +26,4 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Print result 🖨
-        run: echo '${{ steps.prepare.outputs.matrix }}'
+        run: echo '${{ needs.prepare.outputs.matrix }}'
