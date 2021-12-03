@@ -1,0 +1,11 @@
+name: demo
+on: [push]
+
+jobs:
+  prep:
+    runs-on: ubuntu-20.04
+    steps:
+      - id: prepare
+        uses: .
+        with:
+          n: 5
