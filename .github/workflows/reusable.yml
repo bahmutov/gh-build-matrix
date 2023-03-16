@@ -23,7 +23,7 @@ jobs:
       matrix: ${{ steps.prepare.outputs.matrix }}
     steps:
       - name: Checkout 🛎
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # generate the list using a bash script
       - name: Create matrix ⊹

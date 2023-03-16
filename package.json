@@ -1,0 +1,25 @@
+{
+  "name": "gh-build-matrix",
+  "version": "1.0.0",
+  "description": "A little GitHub Action to generate matrix list for other actions to run jobs in parallel",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "github-action"
+  ],
+  "author": "Gleb Bahmutov",
+  "license": "MIT",
+  "release": {
+    "npmPublish": false,
+    "branches": [
+      "main"
+    ]
+  },
+  "devDependencies": {
+    "prettier": "^2.8.4",
+    "semantic-release": "^20.1.1"
+  }
+}
