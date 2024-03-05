@@ -9,7 +9,6 @@ outputs:
   matrix:
     description: 'Matrix strategy JSON string'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.n }}
+  using: 'composite'
+  steps:
+    - run: ./entrypoint.sh ${{ inputs.n }}
