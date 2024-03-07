@@ -13,4 +13,4 @@ runs:
   steps:
     - name: Build matrix
       shell: bash
-      run: ${{ github.action_path }}/entrypoint.sh ${{ inputs.n }}
+      run: echo "matrix=$(${{ github.action_path }}/entrypoint.sh ${{ inputs.n }})" >> $GITHUB_OUTPUT

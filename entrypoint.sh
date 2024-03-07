@@ -23,7 +23,5 @@ done
 # close the list
 OUTPUT+="]}"
 
-# set the job's output
-echo "matrix=$OUTPUT" >> $GITHUB_OUTPUT
 # and print the list so that everyone can see it
 echo ${OUTPUT}
